@@ -1,5 +1,6 @@
 import { Component, signal } from '@angular/core';
 
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.html',
@@ -10,6 +11,12 @@ export class App {
   protected readonly title = signal('my-app');
   nombres: string[] = [];
   nums: number[] = [];
+  products: any = [{nombre: "juan", precio: 2000}, {nombre: "nigger", precio: 100}];
+  tarea = {
+    nombre: "",
+    estado: ""
+  };
+  tareaArreglo: any = [];
 
   nombre(){
     for(var i = 0; i < 5; i++){
@@ -28,4 +35,19 @@ export class App {
       }
     }
   }
+
+  product(){
+    let nombrex = prompt("ingrese nombre");
+    let preciox = Number(prompt("Ingrese precio"));
+    if (nombrex != null && preciox != null){
+      this.products.push({nombre: nombrex, precio: preciox})
+    }
+  }
+
+  tareita(){
+    const dato = this.tarea;
+    this.tareaArreglo.push(dato);
+    console.log(this.tareaArreglo);
+  }
+
 }

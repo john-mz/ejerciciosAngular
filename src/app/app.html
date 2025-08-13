@@ -15,3 +15,25 @@
     {{num}}
   </li>
 </ul>
+
+<hr>
+
+<h3>PREGUNTA 3</h3>
+<button (click)="product()">AGREGA PRODUCTOS BRO</button>
+<ul>
+  <div *ngFor="let product of products">
+    <li *ngIf="product.precio > 100">
+      {{product.nombre}} - {{product.precio}}
+    </li>
+  </div>
+</ul>
+
+<hr>
+
+<h3>PREGUNTA 4</h3>
+<input type="text" id="tarea" [(ngModel)]="tarea.nombre">
+<select name="" id="estado" [(ngModel)]="tarea.estado">
+  <option value="1">Completada</option>
+  <option value="0">No Completada</option>
+</select>
+<button (click)="tareita()">Botoncito</button>
